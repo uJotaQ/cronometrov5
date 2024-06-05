@@ -1,0 +1,679 @@
+Analysis & Synthesis report for main
+Wed Jun  5 12:14:36 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Port Connectivity Checks: "unit_min:um|dFlipFlop:comb_15"
+ 11. Port Connectivity Checks: "duzen_sec:ds|dFlipFlop:comb_6"
+ 12. Port Connectivity Checks: "unit_sec:us|dFlipFlop:comb_9"
+ 13. Port Connectivity Checks: "unit_sec:us|dFlipFlop:comb_8"
+ 14. Port Connectivity Checks: "frequency_divisor:comb_19|dFlipFlop:F1"
+ 15. Port Connectivity Checks: "frequency_divisor:comb_19|dFlipFlop:F0"
+ 16. Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F5"
+ 17. Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F4"
+ 18. Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F3"
+ 19. Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F2"
+ 20. Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F1"
+ 21. Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F0"
+ 22. Port Connectivity Checks: "dFlipFlop:comb_10"
+ 23. Port Connectivity Checks: "dFlipFlop:comb_9"
+ 24. Port Connectivity Checks: "Levl_to_pulse:comb_3|dFlipFlop:comb_3"
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed Jun  5 12:14:36 2024       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; main                                        ;
+; Top-level Entity Name       ; main                                        ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 101                                         ;
+; Total pins                  ; 17                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM240T100C5       ;                    ;
+; Top-level entity name                                            ; main               ; main               ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/main.v                ;         ;
+; dFlipFlop.v                      ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/dFlipFlop.v           ;         ;
+; delay.v                          ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/delay.v               ;         ;
+; unit_sec.v                       ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/unit_sec.v            ;         ;
+; frequency_divisor.v              ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v   ;         ;
+; duzen_sec.v                      ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v           ;         ;
+; unit_min.v                       ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/unit_min.v            ;         ;
+; duzen_min.v                      ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/duzen_min.v           ;         ;
+; Levl_to_pulse.v                  ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/Levl_to_pulse.v       ;         ;
+; duzen_min_set_reset.v            ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/Cronometrov4-main/duzen_min_set_reset.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Total logic elements                        ; 101                ;
+;     -- Combinational with no register       ; 55                 ;
+;     -- Register only                        ; 5                  ;
+;     -- Combinational with a register        ; 41                 ;
+;                                             ;                    ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 39                 ;
+;     -- 3 input functions                    ; 6                  ;
+;     -- 2 input functions                    ; 10                 ;
+;     -- 1 input functions                    ; 41                 ;
+;     -- 0 input functions                    ; 0                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 101                ;
+;     -- arithmetic mode                      ; 0                  ;
+;     -- qfbk mode                            ; 0                  ;
+;     -- register cascade mode                ; 0                  ;
+;     -- synchronous clear/load mode          ; 0                  ;
+;     -- asynchronous clear/load mode         ; 11                 ;
+;                                             ;                    ;
+; Total registers                             ; 46                 ;
+; I/O pins                                    ; 17                 ;
+; Maximum fan-out node                        ; dFlipFlop:comb_9|q ;
+; Maximum fan-out                             ; 17                 ;
+; Total fan-out                               ; 312                ;
+; Average fan-out                             ; 2.64               ;
++---------------------------------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node     ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                       ; Entity Name       ; Library Name ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------+-------------------+--------------+
+; |main                          ; 101 (47)    ; 46           ; 0          ; 17   ; 0            ; 55 (47)      ; 5 (0)             ; 41 (0)           ; 0 (0)           ; 0 (0)      ; |main                                                     ; main              ; work         ;
+;    |Levl_to_pulse:comb_3|      ; 1 (0)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_3                                ; Levl_to_pulse     ; work         ;
+;       |dFlipFlop:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_3|dFlipFlop:comb_3               ; dFlipFlop         ; work         ;
+;    |Levl_to_pulse:comb_4|      ; 1 (0)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_4                                ; Levl_to_pulse     ; work         ;
+;       |dFlipFlop:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_4|dFlipFlop:comb_3               ; dFlipFlop         ; work         ;
+;    |Levl_to_pulse:comb_5|      ; 1 (0)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_5                                ; Levl_to_pulse     ; work         ;
+;       |dFlipFlop:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_5|dFlipFlop:comb_3               ; dFlipFlop         ; work         ;
+;    |Levl_to_pulse:comb_6|      ; 1 (0)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_6                                ; Levl_to_pulse     ; work         ;
+;       |dFlipFlop:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_6|dFlipFlop:comb_3               ; dFlipFlop         ; work         ;
+;    |Levl_to_pulse:comb_7|      ; 1 (0)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_7                                ; Levl_to_pulse     ; work         ;
+;       |dFlipFlop:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|Levl_to_pulse:comb_7|dFlipFlop:comb_3               ; dFlipFlop         ; work         ;
+;    |dFlipFlop:comb_10|         ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|dFlipFlop:comb_10                                   ; dFlipFlop         ; work         ;
+;    |dFlipFlop:comb_9|          ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|dFlipFlop:comb_9                                    ; dFlipFlop         ; work         ;
+;    |duzen_min:du|              ; 2 (0)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |main|duzen_min:du                                        ; duzen_min         ; work         ;
+;       |dFlipFlop:comb_3|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|duzen_min:du|dFlipFlop:comb_3                       ; dFlipFlop         ; work         ;
+;       |dFlipFlop:comb_4|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|duzen_min:du|dFlipFlop:comb_4                       ; dFlipFlop         ; work         ;
+;    |duzen_sec:ds|              ; 6 (2)       ; 3            ; 0          ; 0    ; 0            ; 3 (2)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |main|duzen_sec:ds                                        ; duzen_sec         ; work         ;
+;       |dFlipFlop:comb_5|       ; 2 (2)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|duzen_sec:ds|dFlipFlop:comb_5                       ; dFlipFlop         ; work         ;
+;       |dFlipFlop:comb_6|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|duzen_sec:ds|dFlipFlop:comb_6                       ; dFlipFlop         ; work         ;
+;       |dFlipFlop:comb_7|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|duzen_sec:ds|dFlipFlop:comb_7                       ; dFlipFlop         ; work         ;
+;    |frequency_divisor:comb_19| ; 26 (0)      ; 26           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 26 (0)           ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19                           ; frequency_divisor ; work         ;
+;       |dFlipFlop:F0|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|dFlipFlop:F0              ; dFlipFlop         ; work         ;
+;       |dFlipFlop:F1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|dFlipFlop:F1              ; dFlipFlop         ; work         ;
+;       |delay:comb_3|           ; 6 (0)       ; 6            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (0)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_3              ; delay             ; work         ;
+;          |dFlipFlop:F0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F0 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F1 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F2|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F2 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F3|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F3 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F4|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F4 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F5|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F5 ; dFlipFlop         ; work         ;
+;       |delay:comb_4|           ; 6 (0)       ; 6            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (0)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_4              ; delay             ; work         ;
+;          |dFlipFlop:F0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_4|dFlipFlop:F0 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_4|dFlipFlop:F1 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F2|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_4|dFlipFlop:F2 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F3|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_4|dFlipFlop:F3 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F4|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_4|dFlipFlop:F4 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F5|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_4|dFlipFlop:F5 ; dFlipFlop         ; work         ;
+;       |delay:comb_5|           ; 6 (0)       ; 6            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (0)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_5              ; delay             ; work         ;
+;          |dFlipFlop:F0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_5|dFlipFlop:F0 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_5|dFlipFlop:F1 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F2|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_5|dFlipFlop:F2 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F3|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_5|dFlipFlop:F3 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F4|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_5|dFlipFlop:F4 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F5|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_5|dFlipFlop:F5 ; dFlipFlop         ; work         ;
+;       |delay:comb_7|           ; 6 (0)       ; 6            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (0)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_7              ; delay             ; work         ;
+;          |dFlipFlop:F0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_7|dFlipFlop:F0 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_7|dFlipFlop:F1 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F2|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_7|dFlipFlop:F2 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F3|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_7|dFlipFlop:F3 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F4|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_7|dFlipFlop:F4 ; dFlipFlop         ; work         ;
+;          |dFlipFlop:F5|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|frequency_divisor:comb_19|delay:comb_7|dFlipFlop:F5 ; dFlipFlop         ; work         ;
+;    |unit_min:um|               ; 5 (1)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |main|unit_min:um                                         ; unit_min          ; work         ;
+;       |dFlipFlop:comb_14|      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|unit_min:um|dFlipFlop:comb_14                       ; dFlipFlop         ; work         ;
+;       |dFlipFlop:comb_15|      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|unit_min:um|dFlipFlop:comb_15                       ; dFlipFlop         ; work         ;
+;       |dFlipFlop:comb_16|      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|unit_min:um|dFlipFlop:comb_16                       ; dFlipFlop         ; work         ;
+;       |dFlipFlop:comb_17|      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|unit_min:um|dFlipFlop:comb_17                       ; dFlipFlop         ; work         ;
+;    |unit_sec:us|               ; 8 (3)       ; 4            ; 0          ; 0    ; 0            ; 4 (3)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |main|unit_sec:us                                         ; unit_sec          ; work         ;
+;       |dFlipFlop:comb_10|      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|unit_sec:us|dFlipFlop:comb_10                       ; dFlipFlop         ; work         ;
+;       |dFlipFlop:comb_7|       ; 2 (2)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|unit_sec:us|dFlipFlop:comb_7                        ; dFlipFlop         ; work         ;
+;       |dFlipFlop:comb_8|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|unit_sec:us|dFlipFlop:comb_8                        ; dFlipFlop         ; work         ;
+;       |dFlipFlop:comb_9|       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main|unit_sec:us|dFlipFlop:comb_9                        ; dFlipFlop         ; work         ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 46    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 11    ;
+; Number of registers using Asynchronous Load  ; 4     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; duzen_min:du|dFlipFlop:comb_3|q        ; 6       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "unit_min:um|dFlipFlop:comb_15" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "duzen_sec:ds|dFlipFlop:comb_6" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "unit_sec:us|dFlipFlop:comb_9" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "unit_sec:us|dFlipFlop:comb_8" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divisor:comb_19|dFlipFlop:F1"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rstn ; Input  ; Info     ; Stuck at GND                                                                        ;
+; set  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divisor:comb_19|dFlipFlop:F0" ;
++------+--------+----------+-----------------------------------------+
+; Port ; Type   ; Severity ; Details                                 ;
++------+--------+----------+-----------------------------------------+
+; rstn ; Input  ; Info     ; Stuck at GND                            ;
+; set  ; Input  ; Info     ; Stuck at GND                            ;
+; q    ; Output ; Info     ; Explicitly unconnected                  ;
++------+--------+----------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F5" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; rstn ; Input ; Info     ; Stuck at GND                                          ;
+; set  ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F4" ;
++------+--------+----------+------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                              ;
++------+--------+----------+------------------------------------------------------+
+; rstn ; Input  ; Info     ; Stuck at GND                                         ;
+; set  ; Input  ; Info     ; Stuck at GND                                         ;
+; q    ; Output ; Info     ; Explicitly unconnected                               ;
++------+--------+----------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F3" ;
++------+--------+----------+------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                              ;
++------+--------+----------+------------------------------------------------------+
+; rstn ; Input  ; Info     ; Stuck at GND                                         ;
+; set  ; Input  ; Info     ; Stuck at GND                                         ;
+; q    ; Output ; Info     ; Explicitly unconnected                               ;
++------+--------+----------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F2" ;
++------+--------+----------+------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                              ;
++------+--------+----------+------------------------------------------------------+
+; rstn ; Input  ; Info     ; Stuck at GND                                         ;
+; set  ; Input  ; Info     ; Stuck at GND                                         ;
+; q    ; Output ; Info     ; Explicitly unconnected                               ;
++------+--------+----------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F1" ;
++------+--------+----------+------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                              ;
++------+--------+----------+------------------------------------------------------+
+; rstn ; Input  ; Info     ; Stuck at GND                                         ;
+; set  ; Input  ; Info     ; Stuck at GND                                         ;
+; q    ; Output ; Info     ; Explicitly unconnected                               ;
++------+--------+----------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divisor:comb_19|delay:comb_3|dFlipFlop:F0" ;
++------+--------+----------+------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                              ;
++------+--------+----------+------------------------------------------------------+
+; rstn ; Input  ; Info     ; Stuck at GND                                         ;
+; set  ; Input  ; Info     ; Stuck at GND                                         ;
+; q    ; Output ; Info     ; Explicitly unconnected                               ;
++------+--------+----------+------------------------------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "dFlipFlop:comb_10" ;
++------+-------+----------+---------------------+
+; Port ; Type  ; Severity ; Details             ;
++------+-------+----------+---------------------+
+; set  ; Input ; Info     ; Stuck at GND        ;
++------+-------+----------+---------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "dFlipFlop:comb_9" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; set  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Levl_to_pulse:comb_3|dFlipFlop:comb_3"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rstn ; Input  ; Info     ; Stuck at GND                                                                        ;
+; set  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q_   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Wed Jun  5 12:14:30 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: main File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dFlipFlop.v
+    Info (12023): Found entity 1: dFlipFlop File: /home/aluno/Downloads/Cronometrov4-main/dFlipFlop.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file delay.v
+    Info (12023): Found entity 1: delay File: /home/aluno/Downloads/Cronometrov4-main/delay.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file unit_sec.v
+    Info (12023): Found entity 1: unit_sec File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file frequency_divisor.v
+    Info (12023): Found entity 1: frequency_divisor File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file duzen_sec.v
+    Info (12023): Found entity 1: duzen_sec File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file unit_min.v
+    Info (12023): Found entity 1: unit_min File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file duzen_min.v
+    Info (12023): Found entity 1: duzen_min File: /home/aluno/Downloads/Cronometrov4-main/duzen_min.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Levl_to_pulse.v
+    Info (12023): Found entity 1: Levl_to_pulse File: /home/aluno/Downloads/Cronometrov4-main/Levl_to_pulse.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file duzen_min_set_reset.v
+    Info (12023): Found entity 1: duzen_min_set_reset File: /home/aluno/Downloads/Cronometrov4-main/duzen_min_set_reset.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at main.v(31): created implicit net for "D1_" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 31
+Warning (10236): Verilog HDL Implicit Net warning at main.v(32): created implicit net for "D2_" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 32
+Warning (10236): Verilog HDL Implicit Net warning at main.v(33): created implicit net for "D3_" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at main.v(34): created implicit net for "D4_" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 34
+Warning (10236): Verilog HDL Implicit Net warning at main.v(46): created implicit net for "AUS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 46
+Warning (10236): Verilog HDL Implicit Net warning at main.v(47): created implicit net for "BUS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 47
+Warning (10236): Verilog HDL Implicit Net warning at main.v(48): created implicit net for "CUS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 48
+Warning (10236): Verilog HDL Implicit Net warning at main.v(49): created implicit net for "DUS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 49
+Warning (10236): Verilog HDL Implicit Net warning at main.v(50): created implicit net for "EUS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 50
+Warning (10236): Verilog HDL Implicit Net warning at main.v(51): created implicit net for "FUS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 51
+Warning (10236): Verilog HDL Implicit Net warning at main.v(52): created implicit net for "GUS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 52
+Warning (10236): Verilog HDL Implicit Net warning at main.v(57): created implicit net for "ADS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 57
+Warning (10236): Verilog HDL Implicit Net warning at main.v(58): created implicit net for "BDS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 58
+Warning (10236): Verilog HDL Implicit Net warning at main.v(59): created implicit net for "CDS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 59
+Warning (10236): Verilog HDL Implicit Net warning at main.v(60): created implicit net for "DDS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 60
+Warning (10236): Verilog HDL Implicit Net warning at main.v(61): created implicit net for "EDS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 61
+Warning (10236): Verilog HDL Implicit Net warning at main.v(62): created implicit net for "FDS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 62
+Warning (10236): Verilog HDL Implicit Net warning at main.v(63): created implicit net for "GDS7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 63
+Warning (10236): Verilog HDL Implicit Net warning at main.v(68): created implicit net for "AUM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 68
+Warning (10236): Verilog HDL Implicit Net warning at main.v(69): created implicit net for "BUM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 69
+Warning (10236): Verilog HDL Implicit Net warning at main.v(70): created implicit net for "CUM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 70
+Warning (10236): Verilog HDL Implicit Net warning at main.v(71): created implicit net for "DUM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 71
+Warning (10236): Verilog HDL Implicit Net warning at main.v(72): created implicit net for "EUM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 72
+Warning (10236): Verilog HDL Implicit Net warning at main.v(73): created implicit net for "FUM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 73
+Warning (10236): Verilog HDL Implicit Net warning at main.v(74): created implicit net for "GUM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 74
+Warning (10236): Verilog HDL Implicit Net warning at main.v(79): created implicit net for "ADM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 79
+Warning (10236): Verilog HDL Implicit Net warning at main.v(80): created implicit net for "BDM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 80
+Warning (10236): Verilog HDL Implicit Net warning at main.v(81): created implicit net for "CDM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 81
+Warning (10236): Verilog HDL Implicit Net warning at main.v(82): created implicit net for "DDM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 82
+Warning (10236): Verilog HDL Implicit Net warning at main.v(83): created implicit net for "EDM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 83
+Warning (10236): Verilog HDL Implicit Net warning at main.v(84): created implicit net for "FDM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 84
+Warning (10236): Verilog HDL Implicit Net warning at main.v(85): created implicit net for "GDM7" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 85
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(22): created implicit net for "A1" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(23): created implicit net for "A2" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 23
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(27): created implicit net for "B1" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 27
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(28): created implicit net for "B2" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 28
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(35): created implicit net for "D1" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 35
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(36): created implicit net for "D2" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 36
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(37): created implicit net for "D3" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(41): created implicit net for "E1" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(45): created implicit net for "F1" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 45
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(46): created implicit net for "F2" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 46
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(47): created implicit net for "F3" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 47
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(51): created implicit net for "G1" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 51
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(55): created implicit net for "R1" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 55
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(56): created implicit net for "R2" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 56
+Warning (10236): Verilog HDL Implicit Net warning at unit_sec.v(57): created implicit net for "R3" File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 57
+Warning (10236): Verilog HDL Implicit Net warning at frequency_divisor.v(8): created implicit net for "CLK_OUT1" File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 8
+Warning (10236): Verilog HDL Implicit Net warning at frequency_divisor.v(9): created implicit net for "CLK_OUT2" File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 9
+Warning (10236): Verilog HDL Implicit Net warning at frequency_divisor.v(10): created implicit net for "CLK_OUT3" File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 10
+Warning (10236): Verilog HDL Implicit Net warning at frequency_divisor.v(12): created implicit net for "CLK_OUT4" File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 12
+Warning (10236): Verilog HDL Implicit Net warning at frequency_divisor.v(15): created implicit net for "Q_F0" File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at frequency_divisor.v(24): created implicit net for "Q_F1" File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at frequency_divisor.v(28): created implicit net for "CLK_OUT5" File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 28
+Warning (10236): Verilog HDL Implicit Net warning at duzen_sec.v(16): created implicit net for "A1" File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 16
+Warning (10236): Verilog HDL Implicit Net warning at duzen_sec.v(17): created implicit net for "A2" File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 17
+Warning (10236): Verilog HDL Implicit Net warning at duzen_sec.v(27): created implicit net for "D1" File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 27
+Warning (10236): Verilog HDL Implicit Net warning at duzen_sec.v(28): created implicit net for "D2" File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 28
+Warning (10236): Verilog HDL Implicit Net warning at duzen_sec.v(32): created implicit net for "E1" File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 32
+Warning (10236): Verilog HDL Implicit Net warning at duzen_sec.v(36): created implicit net for "F1" File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 36
+Warning (10236): Verilog HDL Implicit Net warning at duzen_sec.v(43): created implicit net for "R1" File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 43
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(20): created implicit net for "w2" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 20
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(24): created implicit net for "w3" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(25): created implicit net for "w4" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(36): created implicit net for "A1" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 36
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(37): created implicit net for "A2" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(41): created implicit net for "B1" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(42): created implicit net for "B2" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(49): created implicit net for "D1" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 49
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(50): created implicit net for "D2" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 50
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(51): created implicit net for "D3" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 51
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(55): created implicit net for "E1" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 55
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(59): created implicit net for "F1" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 59
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(60): created implicit net for "F2" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 60
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(61): created implicit net for "F3" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 61
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(65): created implicit net for "G1" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 65
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(69): created implicit net for "R1" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 69
+Warning (10236): Verilog HDL Implicit Net warning at unit_min.v(70): created implicit net for "R2" File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 70
+Warning (10236): Verilog HDL Implicit Net warning at Levl_to_pulse.v(5): created implicit net for "q" File: /home/aluno/Downloads/Cronometrov4-main/Levl_to_pulse.v Line: 5
+Warning (10236): Verilog HDL Implicit Net warning at Levl_to_pulse.v(5): created implicit net for "q_" File: /home/aluno/Downloads/Cronometrov4-main/Levl_to_pulse.v Line: 5
+Warning (10236): Verilog HDL Implicit Net warning at duzen_min_set_reset.v(15): created implicit net for "and6" File: /home/aluno/Downloads/Cronometrov4-main/duzen_min_set_reset.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at Levl_to_pulse.v(5): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/Levl_to_pulse.v Line: 5
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(20): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 20
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(21): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 21
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(22): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 22
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(23): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(24): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(28): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(29): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 29
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divisor.v(8): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 8
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divisor.v(9): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divisor.v(10): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divisor.v(12): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(41): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 41
+Critical Warning (10846): Verilog HDL Instantiation warning at unit_sec.v(15): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at unit_sec.v(16): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 16
+Critical Warning (10846): Verilog HDL Instantiation warning at unit_sec.v(17): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at unit_sec.v(18): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/unit_sec.v Line: 18
+Critical Warning (10846): Verilog HDL Instantiation warning at duzen_sec.v(11): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at duzen_sec.v(12): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at duzen_sec.v(13): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/duzen_sec.v Line: 13
+Critical Warning (10846): Verilog HDL Instantiation warning at unit_min.v(30): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 30
+Critical Warning (10846): Verilog HDL Instantiation warning at unit_min.v(31): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 31
+Critical Warning (10846): Verilog HDL Instantiation warning at unit_min.v(32): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 32
+Critical Warning (10846): Verilog HDL Instantiation warning at unit_min.v(33): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 33
+Critical Warning (10846): Verilog HDL Instantiation warning at duzen_min.v(11): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/duzen_min.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at duzen_min.v(12): instance has no name File: /home/aluno/Downloads/Cronometrov4-main/duzen_min.v Line: 12
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Info (12128): Elaborating entity "Levl_to_pulse" for hierarchy "Levl_to_pulse:comb_3" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 20
+Info (12128): Elaborating entity "dFlipFlop" for hierarchy "Levl_to_pulse:comb_3|dFlipFlop:comb_3" File: /home/aluno/Downloads/Cronometrov4-main/Levl_to_pulse.v Line: 5
+Info (12128): Elaborating entity "frequency_divisor" for hierarchy "frequency_divisor:comb_19" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 41
+Info (12128): Elaborating entity "delay" for hierarchy "frequency_divisor:comb_19|delay:comb_3" File: /home/aluno/Downloads/Cronometrov4-main/frequency_divisor.v Line: 8
+Info (12128): Elaborating entity "unit_sec" for hierarchy "unit_sec:us" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 44
+Info (12128): Elaborating entity "duzen_sec" for hierarchy "duzen_sec:ds" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 55
+Info (12128): Elaborating entity "unit_min" for hierarchy "unit_min:um" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 66
+Info (12128): Elaborating entity "duzen_min" for hierarchy "duzen_min:du" File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 77
+Info (12128): Elaborating entity "duzen_min_set_reset" for hierarchy "duzen_min:du|duzen_min_set_reset:dmsr" File: /home/aluno/Downloads/Cronometrov4-main/duzen_min.v Line: 9
+Warning (10034): Output port "SET1" at duzen_min_set_reset.v(3) has no driver File: /home/aluno/Downloads/Cronometrov4-main/duzen_min_set_reset.v Line: 3
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "unit_min:um|RST2" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/unit_min.v Line: 6
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "RST" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 13
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "RST" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 13
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "RST" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 13
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "RST" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 13
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "RST" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 13
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "RST" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 13
+    Warning (12110): Net "h" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "m" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+    Warning (12110): Net "l" is missing source, defaulting to GND File: /home/aluno/Downloads/Cronometrov4-main/main.v Line: 17
+Info (13014): Ignored 10 buffer(s)
+    Info (13019): Ignored 10 SOFT buffer(s)
+Info (18000): Registers with preset signals will power-up high File: /home/aluno/Downloads/Cronometrov4-main/dFlipFlop.v Line: 6
+Info (21057): Implemented 118 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 101 logic cells
+Info (144001): Generated suppressed messages file /home/aluno/Downloads/Cronometrov4-main/output_files/main.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 161 warnings
+    Info: Peak virtual memory: 340 megabytes
+    Info: Processing ended: Wed Jun  5 12:14:36 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:12
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/aluno/Downloads/Cronometrov4-main/output_files/main.map.smsg.
+
+
